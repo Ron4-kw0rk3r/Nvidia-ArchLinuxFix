@@ -36,12 +36,26 @@ function installer() {
 				echo 'please script build nvidia in boot'
 				if [ -d /boot/grub ]; then
  					sudo grub-mkconfig -o /boot/grub/grub.cfg 
+
+ 					echo 'complet finish'
+
+ 					
+					exit
 				
  				else
- 					echo 'attemp in btfrs ...'
- 					if -d [ -d /@boot/grub/grub.cfg ]; then
- 						sudo grub-mkconfig -o @boot/grub/grub.cfg
- 					fi					
+ 					echo 'attemp in btfrs ...' && echo -n "check attemp in btrfs : " 
+ 					read dataver
+ 					if [ $dataver == [ Y/y ] ]; then
+ 						
+ 					 
+ 						#if -d [ -d /@boot/grub/grub.cfg ]; then
+ 						#	sudo grub-mkconfig -o @boot/grub/grub.cfg
+ 						#fi
+ 					else
+ 						echo 'fix solve problem... '
+ 						exit
+ 					fi
+ 				fi				
 			else
 				echo "error"
 				exit
