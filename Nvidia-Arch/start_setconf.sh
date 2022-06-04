@@ -47,10 +47,11 @@ function installer() {
  					read dataver
  					if [ $dataver == [ Y/y ] ]; then
  						
- 					 
+ 					 	echo "btrfs files broke directory"
  						#if -d [ -d /@boot/grub/grub.cfg ]; then
  						#	sudo grub-mkconfig -o @boot/grub/grub.cfg
  						#fi
+						exit
  					else
  						echo 'fix solve problem... '
  						exit
